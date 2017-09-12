@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ *
+ * @return array
+ *   The information on the blocks from this module.
+ */
+function civihr_signup_block_info() {
+  $blocks['civihr_signup'] = [
+    'info' => t('CiviHR Signup Block'),
+    'cache' => DRUPAL_CACHE_GLOBAL
+  ];
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_info_alter().
+ *
+ * @param array $blocks
+ * @param string $theme
+ * @param array $code_blocks
+ */
+function civihr_signup_block_info_alter(&$blocks, $theme, $code_blocks) {
+  $signupBlock = CRM_Utils_Array::value('civihr_signup', $blocks);
+
+  if (!$signupBlock) {
+    return;
+  }
+
+  // enable block in content region for all themes
+  $signupBlock['civihr_signup']['status'] = BLOCK_CUSTOM_ENABLED;
+  $signupBlock['civihr_signup']['region'] = 'content';
+  $blocks['civihr_signup'] = $signupBlock;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * @param string $delta
+ *   Which block is being requested.
+ *
+ * @return array
+ */
+function civihr_signup_block_view($delta = '') {
+  $block = [];
+
+  switch ($delta) {
+    case 'civihr_signup':
+      $block['content'] = theme('civihr_signup_block');
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ *
+ * @return array
+ *   Metadata about what should be used for certain themes. Theme hook should
+ *   match array index.
+ */
+function civihr_signup_theme() {
+  return [
+    'civihr_signup_block' => [
+      'template' => 'templates/signup-block',
+    ],
+  ];
+}

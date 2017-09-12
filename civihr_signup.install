@@ -1,0 +1,11 @@
+<?php
+
+use Drupal\civihr_signup\Service\BlockService;
+
+/**
+ * Implements hook_disable().
+ */
+function civihr_signup_disable() {
+  $blockService = new BlockService();
+  $blockService->deleteBlock('civihr_signup', 'civihr_signup');
+}

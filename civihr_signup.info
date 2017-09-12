@@ -1,0 +1,6 @@
+name = CiviHR Signup
+description = Adds prompts to sign up for CiviHR
+core = 7.x
+package = Compucorp
+stylesheets[all][] = css/civihr-signup.css
+scripts[] = js/civihr-signup.js
