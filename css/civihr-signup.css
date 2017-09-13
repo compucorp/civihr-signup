@@ -7,13 +7,13 @@
     top: 130px;
     width: 280px;
     background: #fff;
-    font-family: Lato, sans-serif;
     border-radius: 2px;
     font-size: 14px;
     box-sizing: initial;
     color: #475568;
     padding: 10px 30px;
     box-shadow: 0 5px 20px rgba(136, 136, 136, 0.27);
+    font-family: "museo-sans",sans-serif;
 }
 
 #civihr-signup-tab #signup-hide-button {

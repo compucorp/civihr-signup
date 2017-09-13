@@ -16,13 +16,19 @@ function civihr_signup_block_info() {
 }
 
 /**
+ * Implements hook_preprocess_page().
+ */
+function civihr_signup_preprocess_page() {
+  // add typekit JS to load fonts
+  drupal_add_js('https://use.typekit.net/mhr5yod.js');
+}
+
+/**
  * Implements hook_block_info_alter().
  *
  * @param array $blocks
- * @param string $theme
- * @param array $code_blocks
  */
-function civihr_signup_block_info_alter(&$blocks, $theme, $code_blocks) {
+function civihr_signup_block_info_alter(&$blocks) {
   $signupBlock = CRM_Utils_Array::value('civihr_signup', $blocks);
 
   if (!$signupBlock) {
