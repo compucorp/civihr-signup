@@ -2,7 +2,7 @@
     transition: right 1s;
     text-align: center;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     right: -340px;
     top: 130px;
     width: 280px;
