@@ -66,6 +66,6 @@
     border-radius: 2px;
 }
 
-#civihr-signup-tab .slide-in-right {
+#civihr-signup-tab.slide-in-right {
     right: 0 !important;
 }
