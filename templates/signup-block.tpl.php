@@ -1,5 +1,5 @@
 <div id="civihr-signup-tab">
-    <h3 id="signup-hide-button" class="vertical-text signup-button big-and-bold rounded">
+    <h3 id="signup-hide-button" class="vertical-text signup-button big-and-bold rounded-top">
         JOIN CIVIHR
     </h3>
 
